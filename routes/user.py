@@ -17,7 +17,8 @@ user:object = Blueprint('user', __name__)
 def create_user():
     form:object = UserForm()
     if request.method == "GET":
-        return generate_token()
+        token = generate_token()
+        return render_template('user_create.html', token=token)
     else:
         if form.validate_on_submit():
             

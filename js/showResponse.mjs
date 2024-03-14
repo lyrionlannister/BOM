@@ -6,16 +6,15 @@ export function showResponse(data, status) {
         Swal.fire({
             title: data.message,
             icon: status === 200 ? 'success' : 'error',
-            timer: 4000,
-            timeProgressBar: true,
+            timer: 3000,
+            timerProgressBar: true,
             toast: true,
             position: 'top-end',
             showConfirmButton: false,
             customClass: {
                 popup: 'my-swal-popup', 
                 content: 'my-swal-content'
-            }
+            },
         });
-    };
-    
+    };   
 }
