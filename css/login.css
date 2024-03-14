@@ -10,10 +10,6 @@ main{
     min-width: 90dvw;
     min-height: 44rem; 
 }
-#logo{
-    max-width: 6rem;
-    max-height: auto;
-}
 
 .my-swal-popup {
     display: flex;
