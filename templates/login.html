@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block tittle %}
-  <title>Login</title>
+<title>Login</title>
 {% endblock %}
 
 {% block styles %}
@@ -10,11 +10,11 @@
 {% endblock %}
 
 {% block main %}
-<div class="container d-flex justify-content-center align-items-center my-2 w-100 h-100">
-  <div class="row p-5 my-5">
-    <div class="col-12 p-5 my-5 h-100">
 
-      <form class="card p-3" id="login_form" action="/api/auth/login" method="post">
+  <div class="row d-flex justify-content-center align-items-center p-5 my-5 w-100">
+    <div class="card m-3 p-1 w-25">
+
+      <form class="p-3" id="login_form" action="/api/auth/login" method="post">
 
         <div class="input-group mb-3">
           <span class="input-group-text">
@@ -36,17 +36,19 @@
             <label for="login_password">Password</label>
           </div>
         </div>
-
+        <input class="d-none" type="hidden" id="token" value="{{ token }}">
         <hr>
-        <input type="hidden" id="token" value="{{ token }}">
-        <button class="btn btn-primary" type="submit">Login</button>
+        <div class="d-flex justify-content-between align-items-center">
+          <button class="btn btn-primary" type="submit">Login</button>
+          <a href="">Forgot your password?</a>
+        </div>
 
       </form>
 
     </div>
   </div>
 
-</div>
+<script type="module" src="{{ url_for('js', filename='login.mjs') }}"></script>
 
 {% endblock %}
 
